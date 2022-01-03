@@ -1,0 +1,28 @@
+<div class="container-fluid post">
+   <div class="row">
+       <a *ngFor="let post of posts" class="row post-item" routerLink="/post/{{post.id}}">
+            <div class="col-1 post-avatar">
+                <span><img src="{{ post.avatarUrl }}" class="img-fluid" alt=""></span>
+            </div>
+            <div class="col-10 post-details">
+                <div class="">
+                    <div class="post-header d-flex flex-row">
+                        <span class="post-username">{{ post.username.toUpperCase() }}</span>
+                        <span class="post-email text-secondary">#{{ post.email }}</span>
+                        <span class="post-space text-secondary mx-2">|</span>
+                        <span class="post-timestamp text-secondary">{{ post.timeStamp }}</span>
+                    </div>
+                    <div class="row post-content">
+                        <p class="post-text fw-light">{{ post.content }}</p>
+                        <span><img class="post-image" src="{{ post.imageUrl }}" alt=""></span>
+                    </div>
+                    <div class="post-impressions d-flex flex-row">
+                        <fa-icon [icon]="faThumbsUp"></fa-icon><span class="post-likes">{{ post.likes }}</span>
+                        <fa-icon [icon]="faThumbsDown"></fa-icon><span class="post-dislikes">{{ post.dislikes }}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+       
+   </div>
+</div>

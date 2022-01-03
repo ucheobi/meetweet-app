@@ -1,0 +1,18 @@
+.form-group {
+    margin-bottom: 20px;
+}
+
+.register {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.login {
+    padding: 20px;
+}
+
+
+.login-form-details {
+    width: 80%;
+    margin:0 auto;
+}
