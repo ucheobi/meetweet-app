@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Follower } from "../model/follower.model";
+import { Follower } from "../model/friends.model";
 import { StaticDataSource } from "../model/static.datasource";
 import { Observable } from "rxjs";
 

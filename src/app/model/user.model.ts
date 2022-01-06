@@ -1,4 +1,4 @@
-import { Follower } from "./follower.model";
+import { Friends } from "./friends.model";
 import { Post } from "./post.model";
 
 export class User {
@@ -8,6 +8,6 @@ export class User {
         public email: string,
         public password: string,
         public post?: Post[],
-        public friends?: Follower[]
+        public friends?: Friends[]
     ) {}
 }

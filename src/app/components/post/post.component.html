@@ -2,7 +2,7 @@
    <div class="row">
        <a *ngFor="let post of posts" class="row post-item" routerLink="/post/{{post.id}}">
             <div class="col-1 post-avatar">
-                <span><img src="{{ post.avatarUrl }}" class="img-fluid" alt=""></span>
+                <span><img src="{{ post.avatarUrl }}" class="img-fluid" alt="avatar"></span>
             </div>
             <div class="col-10 post-details">
                 <div class="">
@@ -14,7 +14,7 @@
                     </div>
                     <div class="row post-content">
                         <p class="post-text fw-light">{{ post.content }}</p>
-                        <span><img class="post-image" src="{{ post.imageUrl }}" alt=""></span>
+                        <span><img class="post-image" src="{{ post.fileUrl }}" alt=""></span>
                     </div>
                     <div class="post-impressions d-flex flex-row">
                         <fa-icon [icon]="faThumbsUp"></fa-icon><span class="post-likes">{{ post.likes }}</span>

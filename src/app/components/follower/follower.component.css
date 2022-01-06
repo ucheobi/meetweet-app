@@ -1,0 +1,30 @@
+.friend li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.friends {
+    position: fixed;
+    bottom: 2px;
+    border: 1px solid ;
+    padding: 10px 10px 0 0px;
+    border-bottom: 0;
+}
+
+.friends li:hover {
+    background-color: rgba(240, 248, 255, 0.301);
+    cursor: pointer;
+}
+
+.friends h4 {
+    margin-left: 20px;
+    color: rgb(221, 235, 247);
+}
+
+.avatar {
+    width: 10%;
+}
+
+.username {
+    margin-left: 10px;
+}

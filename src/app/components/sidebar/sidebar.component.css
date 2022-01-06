@@ -1,0 +1,39 @@
+.sidebar {
+   position: fixed;
+   background-color: black;
+   bottom: 4px;
+   width: 25.6%;
+}
+
+.sidebar-group li {
+    background-color: black;
+    color: white;
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar-item a {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.account {
+    margin: 5px 0 10px 10px;
+    width: 90%;
+    padding: 10px;
+}
+
+.acct_avatar {
+    width: 15%;
+    margin: 10px;
+}
+
+.acct {
+    padding: 15px;
+}
+
+.acct:hover {
+    cursor: pointer;
+}
+

@@ -1,1 +1,7 @@
-<p>friends works!</p>
+<div class="friends">
+    <h4>Friends</h4>
+    <hr>
+    <ul class="friend" *ngFor="let friend of friends"> 
+        <li><span class="friend-avatar"><img src="{{friend.avatarUrl}}" class="img-fluid avatar" alt="avatar"></span><span class="username">{{ friend.username }}</span></li>
+    </ul>
+</div>

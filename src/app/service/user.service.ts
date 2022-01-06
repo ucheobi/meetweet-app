@@ -8,6 +8,7 @@ import { Observable } from "rxjs";
 })
 export class UserService {
   private users: User[] = [];
+  private friends: any[] = [];
 
   constructor(private dataSource: StaticDataSource) {
     dataSource.getUsers().subscribe(data => {
@@ -21,6 +22,10 @@ export class UserService {
 
   getUser(id: number): any {
       return this.users.find(user => user.id == id)
+  }
+
+  getUserFriends(id: number): any {
+    return this.users.find(user => user.id == id)?.friends;
   }
 
   createUser(user: User): Observable<User> {

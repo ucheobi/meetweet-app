@@ -12,10 +12,12 @@
 .post-item {
     border: solid rgb(128, 128, 128) 1px;
     padding: 10px 0;
+    text-decoration: none;
+    color: white;
 }
 
 .post-image {
-    width: 100%;
+    width: 90%;
     border-radius: 3%;
 }
 

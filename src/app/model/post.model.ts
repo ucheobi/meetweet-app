@@ -6,10 +6,9 @@ export class Post {
         public email: string,
         public content: string,
         public timeStamp: number,
-        public avatarUrl?: string,
-        public imageUrl?: string,
-        public videoUrl?: string,
+        public avatarUrl: string,
         public likes?: number,
         public dislikes?: number,
+        public fileUrl?: string,
       ) { }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Post } from '../model/post.model';
 import { StaticDataSource } from '../model/static.datasource';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 export class PostService {
   private posts: Post[] = [];
 
-  constructor(private dataSource: StaticDataSource) {
+  constructor(private dataSource: StaticDataSource, private _http: HttpClient) {
       dataSource.getPosts().subscribe(data => {
           this.posts = data;
       })

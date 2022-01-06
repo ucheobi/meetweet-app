@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Follower } from '../../model/follower.model';
+import { Friends } from '../../model/friends.model';
 import { User } from '../../model/user.model';
-import { FollowerService } from '../../service/follower.service';
+import { FriendsService } from '../../service/friends.service';
 import { UserService } from '../../service/user.service';
 import { UserRepository } from '../../repository/user.repository';
 
