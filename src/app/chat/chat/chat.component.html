@@ -1,0 +1,39 @@
+<div class="container-fluid chat" [style.display]="show">
+    <div class="card">
+        <div (click)="hideChat()" class="chat-header bg-primary text-white">
+            <div class="user-frnd">
+                <span class="frnd-avatar"><img class="avatar" src="{{ avatar }}" alt=""></span>
+                <span class="frnd-username">{{ username }} </span>        
+            </div>
+        </div>
+        <div class="chat-area">           
+            <div class="row user-outgoing" *ngFor="let chatMsg of chatService.chatMessages">
+                <div class="col-2">
+                    <span ><img class="u-avatar" src="{{ avatar }}" alt=""></span>
+                </div>
+                <div class="user-chat-time col-9">
+                    <p class="user-chat-text">{{ chatMsg.user }}</p>  
+                    <p class="user-chat-text">{{ chatMsg.message }}</p>
+                    <p class="user-timestamp">{{ showDate() }}</p>
+                </div>      
+            </div>
+        </div>
+
+        <div class="form row">
+            <form (ngSubmit)="sendMessage(sendMsg)" #sendMsg="ngForm"> 
+                <div class="row chat-msg">
+                    <div class="col-1">
+                        <input ngModel type="text" name="user" id="user" class="form-control">
+                    </div>
+                    <div class="col-8">
+                        <input ngModel type="text" name="message" id="message" class="form-control">
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>

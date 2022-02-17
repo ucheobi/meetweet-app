@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FriendsService } from 'src/app/service/friends.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private friendService: FriendsService) { }
+
+  display = "none"
+  userId = 0;
+  username = "";
+  avatar = ""
 
   ngOnInit(): void {
+  }
+
+  showEvent(value: string): void {
+    this.display = value;
+  }
+
+  getFrnd(userId: number): void {
+    //this.user = userId
+    let currentUser = this.friendService.getFriend(userId) 
+  }
+
+  getUsername(username: string) {
+    this.username = username;
+  }
+
+  getAvatar(avatar: string) {
+    this.avatar = avatar;
   }
 
 }

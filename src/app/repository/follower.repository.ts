@@ -1,29 +1,30 @@
 import { Injectable } from "@angular/core";
-import { Follower } from "../model/friends.model";
+import { Friends } from "../model/friends.model";
 import { StaticDataSource } from "../model/static.datasource";
 import { Observable } from "rxjs";
+import { UserRegister } from "../model/user.model";
 
 @Injectable()
 export class FollowersRepository {
-    private followers: Follower[] = [];
+    private followers: UserRegister[] = [];
 
     constructor(private dataSource: StaticDataSource) {
-        dataSource.getFollowers().subscribe(data => {
+        dataSource.getUsers().subscribe(data => {
             this.followers = data;
         })
     }
 
-    getFollowers(): Follower[] {
+    getFollowers(): UserRegister[] {
         return this.followers;
     }
 
-    getFollower(id: number): any {
-        return this.followers.map(item => {
-            item.followers.find(follower => follower == id);
-        })
-    }
+    // getFollower(id: number): any {
+    //     return this.followers.map(item => {
+    //         item.friends.find(follower => follower == id);
+    //     })
+    // }
 
-    addFollower(follower: Follower): Observable<Follower> {
-        return this.dataSource.addFollower(follower);
-    }    
+    // addFollower(follower: Friends): Observable<Friends> {
+    //     return this.dataSource.addFollower(follower);
+    // }    
 }

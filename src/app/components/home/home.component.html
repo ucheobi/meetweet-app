@@ -14,14 +14,26 @@
         <div class="col-6">
             <div class="mt-col-80">
                 <post-form></post-form>
+                <app-chat 
+                    [show]="display"
+                    [username]="username"
+                    [avatar]="avatar"
+
+                >         
+                </app-chat>
                 <app-post></app-post> 
             </div>
         </div> 
         <div class="col-3">
-            <app-follower></app-follower>
-        </div>     
+            <app-friends 
+                (display)="showEvent($event)"
+                (username)="getUsername($event)"
+                (avatar)="getAvatar($event)"
+            >
+            </app-friends>
+        </div> 
+            
     </div>
-    
 </div>
 
 

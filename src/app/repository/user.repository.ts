@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
-import { User } from "../model/user.model";
+import { UserRegister } from "../model/user.model";
 import { StaticDataSource } from "../model/static.datasource";
 import { Observable } from "rxjs";
 
 @Injectable()
 export class UserRepository {
-    private users: User[] = [];
+    private users: UserRegister[] = [];
 
     constructor(private dataSource: StaticDataSource) {
         dataSource.getUsers().subscribe(data => {
@@ -13,7 +13,7 @@ export class UserRepository {
         })
     }
 
-    getUsers(): User[] {
+    getUsers(): UserRegister[] {
         return this.users;
     }
 
@@ -21,7 +21,7 @@ export class UserRepository {
         return this.users.find(user => user.id == id)
     }
 
-    createUser(user: User): Observable<User> {
+    createUser(user: UserRegister): Observable<UserRegister> {
         return this.dataSource.saveUser(user);
     }    
 }

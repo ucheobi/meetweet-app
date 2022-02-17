@@ -7,7 +7,7 @@
 
 .post-area {
    width: 80%; 
-   color: white;
+   color: rgba(255, 255, 255, 0.596);
    margin-bottom: 10px;
    background-color: black;
 }

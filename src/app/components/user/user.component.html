@@ -4,28 +4,32 @@
       
          <hr>
         <div class="row login-form-details">
-            <div ngModelGroup="register" class="col-md-6 register">
-                 <form #register="ngForm" role="form">
-                    <fieldset>							
+            <div class="col-md-6 register">
+                 <form #registerForm="ngForm" role="form" (ngSubmit)="onSubmit()">
+                    <fieldset>	
+					
                         <p class="text-uppercase pull-center"> SIGN UP.</p>	
                          <div class="form-group">
-                            <input ngModel type="text" name="username" id="username" class="form-control input-lg" placeholder="username" />
+                             <label for="username">Username</label>
+                            <input [(ngModel)]="registerModel.username" type="text" name="username" id="username" class="form-control input-lg" placeholder="username" />
                         </div>
 
                         <div class="form-group">
-                            <input ngModel type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
+                            <label for="email">Email</label>
+                            <input [(ngModel)]="registerModel.email" type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
                         </div>
                         <div class="form-group">
-                            <input ngModel type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" />
+                            <label for="password">Password</label>
+                            <input [(ngModel)]="registerModel.password" type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" />
                         </div>
-                            <div class="form-group">
-                            <input ngModel type="password" name="password2" id="password2" class="form-control input-lg" placeholder="Repeat Password" />
+                        <div class="form-group">
+                            <label for="password2">Repeat Password</label>
+                            <input [(ngModel)]="registerModel.repeatPassword" type="password" name="repeatPassword" id="repeatpassword" class="form-control input-lg" placeholder="Repeat Password" />
                         </div>
                         <div class="form-check">
-                            <label class="form-check-label">
-                              <input ngModel type="checkbox" class="form-check-input" /> 
-                              By Clicking register you're agree to our policy & terms
-                            </label>
+                            <label for="agreement">Agreement</label>
+                              <input [(ngModel)]="registerModel.policyAgreement" type="checkbox" name="checkbox" class="form-check-input" /> 
+                              By Clicking register you're agree to our policy & terms  
                           </div>
                          <div>
                             <input type="submit" class="btn btn-lg btn-primary mt-3" value="Register" />
@@ -34,18 +38,19 @@
                 </form>
         
             </div>
-            
-     
-            
+
             <div class="col-md-6 login">
-                <form #login="ngForm" role="form">
-                    <fieldset ngModelGroup="login">							
+                <form #loginForm="ngForm" (ngSubmit)="loginUser()">
+        
+                    <fieldset ngModel="login">							
                         <p class="text-uppercase"> Login using your account: </p>	       
                         <div class="form-group">
-                            <input ngModel type="email" name="email" id="email" class="form-control input-lg" placeholder="email" />
+                            <label for="email">Email </label>
+                            <input [(ngModel)]="loginModel.email" type="email" name="login-email" id="login-email" class="form-control input-lg" placeholder="email" />
                         </div>
                         <div class="form-group">
-                            <input ngModel type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" />
+                            <label for="password">Password</label>
+                            <input [(ngModel)]="loginModel.password"  type="password" name="loginpassword" id="login-password" class="form-control input-lg" placeholder="Password" />
                         </div>
                         <div>
                             <input type="submit" class="btn btn-md btn-primary" value="Sign In" />
@@ -53,7 +58,12 @@
                     </fieldset>
                 </form>	
             </div>
+            
         </div>
+
+        
     </div>
+
+    
 
 </div>

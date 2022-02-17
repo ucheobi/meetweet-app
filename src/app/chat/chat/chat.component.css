@@ -1,0 +1,83 @@
+.chat {
+    width: 30%;
+    position: fixed;
+    height: 16rem;
+    bottom: 37px;
+    right: 24%;
+}
+
+.chat-header {
+    padding: 3px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 20px;
+}
+
+.frnd-avatar {
+    margin: 0 10px;
+}
+
+.chat-area {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px;
+    height: 14rem;
+    overflow-y: scroll;
+}
+
+.frnd-outgoing {
+    margin-right: 28px;
+}
+
+.frnd-chat-text {
+    padding: 10px;
+    float: right;
+    margin: 10px -5px 5px 0;
+    width: 80%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px;
+    color: rgb(12, 12, 12);
+    background-color: rgba(223, 219, 219, 0.479);
+}
+
+.frnd-timestamp {
+    color: rgba(58, 56, 56, 0.582);
+    width: 60%;
+    float: right;
+    text-align: right;
+    font-size: 9px;
+}
+
+.user-chat-text {
+    padding: 5px;
+    margin: 10px 1px 10px 0;
+    width: 80%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px;
+    color: rgb(12, 12, 12);
+    clear: right;
+    background-color: rgba(223, 219, 219, 0.479);
+}
+
+.frnd-chat-time {
+    margin-right: -10px;
+}
+
+.f-avatar {
+    width: 50px;
+    margin: 10px 22px 0 0;
+}
+
+.user-timestamp {
+    color: rgba(58, 56, 56, 0.582);
+    width: 60%;
+    text-align: left;
+    font-size: 9px;
+}
+
+.u-avatar {
+    width: 50px;
+    margin: 10px 0 0 5px;
+}
+

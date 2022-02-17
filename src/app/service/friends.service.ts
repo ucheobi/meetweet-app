@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Friends } from "../model/friends.model";
 import { StaticDataSource } from "../model/static.datasource";
 import { Observable } from "rxjs";
-import { User } from '../model/user.model';
+import { UserRegister } from '../model/user.model';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -10,27 +10,18 @@ import { UserService } from './user.service';
 })
 export class FriendsService {
 
-  private friends: any[] = [];
+    //public friends: Friends[] = [];
 
-
-    constructor(private dataSource: StaticDataSource, private userService: UserService) {
-        dataSource.getUsers().subscribe(data => {
-            data.map((user, i) => {
-                this.friends.push(user.friends);          
-            })
-        })
-    }
-
-    getUserFriends(userId: number): Friends[] {
-        //return this.friends[userId];
-        return this.userService.getUserFriends(userId);
-    }
+    constructor(private dataSource: StaticDataSource, private userService: UserService) {    }
     
 
+    getUserFriends(userId: number): Friends[] {
+        return this.userService.getUser(userId).friends;    
+    }
+
     getFriend(id: number): any {
-        // return this.friends.map(item => {
-        //     item.friends.find(friend => friend == id);
-        // })
+        let userFriends = this.getUserFriends(2);
+        return userFriends.find(friend => friend.id == id);
     }
 
     addFollower(friend: Friends): Observable<Friends> {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from "../model/user.model";
+import { UserRegister } from "../model/user.model";
 import { StaticDataSource } from "../model/static.datasource";
 import { Observable } from "rxjs";
 
@@ -7,8 +7,7 @@ import { Observable } from "rxjs";
   providedIn: 'root'
 })
 export class UserService {
-  private users: User[] = [];
-  private friends: any[] = [];
+  private users: UserRegister[] = [];
 
   constructor(private dataSource: StaticDataSource) {
     dataSource.getUsers().subscribe(data => {
@@ -16,7 +15,7 @@ export class UserService {
     })
   }
 
-  getUsers(): User[] {
+  getUsers(): UserRegister[] {
       return this.users;
   }
 
@@ -24,11 +23,7 @@ export class UserService {
       return this.users.find(user => user.id == id)
   }
 
-  getUserFriends(id: number): any {
-    return this.users.find(user => user.id == id)?.friends;
-  }
-
-  createUser(user: User): Observable<User> {
+  createUser(user: UserRegister): Observable<UserRegister> {
       return this.dataSource.saveUser(user);
   }   
 }

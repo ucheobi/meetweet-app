@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Post } from "./post.model";
 import { Observable, from, of } from "rxjs";
-import { User } from "./user.model";
+import { UserRegister } from "./user.model";
 import { Friends } from "./friends.model";
 
 @Injectable()
@@ -17,8 +17,8 @@ export class StaticDataSource {
     ]
 
      // Repository and methods for User
-     private users: User[] = [
-        { id: 1, username: "ucheobiefula", email: "ucheanota@yahoo.com", password: "", 
+     private users: UserRegister[] = [
+        { id: 1, username: "ucheobiefula", email: "ucheanota@yahoo.com", password: "", repeatPassword: "", policyAgreement: true, 
             post: [], 
             friends: [
                 {id: 2, username: "preciouslady", avatarUrl: "../../assets/content-image/avatar2.jpg" },
@@ -40,17 +40,13 @@ export class StaticDataSource {
         return from([post]);
     }
 
-    getUsers(): Observable<User[]> {
+    getUsers(): Observable<UserRegister[]> {
         return from([this.users])
-    }
-
-    getUser(id: number): Observable<User> {
-        return this.getUser(id);
     }
 
 //    getUserFriends(id: number)
 
-    saveUser(user: User): Observable<User> {
+    saveUser(user: UserRegister): Observable<UserRegister> {
         console.log(JSON.stringify(user));    
         return from([user]);
     }

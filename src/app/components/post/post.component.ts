@@ -16,7 +16,7 @@ export class PostComponent {
   faThumbsDown = faThumbsDown;
 
   get posts(): Post[] {
-    return this.postService.getPosts();
+    return this.postService.getPosts().reverse();
   }
 
   getPost(id: number): Post {
